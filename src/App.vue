@@ -1,18 +1,18 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <Contador titulo="Contador1" :valor="calcularValor()"/>
-  <Contador titulo="Contador2" v-bind:valor="5+5"></Contador>
-  <Contador titulo="Contador3"></Contador>
+  <Calculadora />
     
 </template>
 
 <script>
-import Contador from './components/Contador.vue'
+import Calculadora from './components/Calculadora.vue';
+
 
 export default {
   name: 'App',
   components: {
-      Contador
+      
+      Calculadora
   },
   methods:{
     calcularValor(){
