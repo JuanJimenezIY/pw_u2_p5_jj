@@ -1,6 +1,6 @@
 <template>
  
-  <Pregunta />
+  <Pregunta/>
     
 </template>
 
@@ -11,13 +11,10 @@ import Pregunta from './components/Pregunta.vue';
 export default {
   name: 'App',
   components: {
-      
       Pregunta
   },
   methods:{
-    calcularValor(){
-      return 5+5*100;
-    }
+    
   }
 }
 </script>
