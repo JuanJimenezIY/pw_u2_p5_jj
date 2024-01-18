@@ -5,17 +5,31 @@
 </template>
 
 <script>
+
 import PokemonImagen from '../components/PokemonImagen.vue'
 import PokemonOpciones from '../components/PokemonOpciones.vue'
 
-import obtenerIdPokemonsFachada from '../helpers/pokemonHelper'
+import obtenerPokemonsIdFachada from '../helpers/pokemonHelper'
 
-obtenerIdPokemonsFachada()
+
+obtenerPokemonsIdFachada()
 
 export default {
 components:{
     PokemonImagen,
      PokemonOpciones
+},
+mounted(){
+  console.log('Se monto el componente PokemonPage')
+  this.cargaInicial()
+  },
+methods:{
+  async cargaInicial(){
+  const arregloPokemons= await obtenerPokemonsIdFachada();
+  console.log('desde componente');
+  console.log(arregloPokemons);
+},
+  
 }
 }
 </script>
