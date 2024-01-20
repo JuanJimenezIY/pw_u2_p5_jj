@@ -1,7 +1,8 @@
 <template>
   <div class="container">
     <img :src="urlImg" alt="No se puede">
-    <label for="">{{texto}}</label>
+    
+    <p>{{texto}}</p>
   </div>
 </template>
 
@@ -22,6 +23,9 @@ export default {
 <style>
 img{
     width: 200px;
-    height: 300px;
+    height: 200px;
 }
+
+
+
 </style>
