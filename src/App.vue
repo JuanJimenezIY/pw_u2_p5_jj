@@ -1,38 +1,16 @@
 <template>
-  <!--<PokemonPage/>-->
-  <div class="container" v-if="mostrarJuego">
-    <h1>Casino Pokemon</h1>
-    <h2>Puntaje:{{ puntaje }}</h2>
-    <h2>Intentos:{{ intento }}</h2>
-
-    <Imagen class="imagen" :texto="texto1" :urlImg="url1" />
-    <Imagen class="imagen" :texto="texto2" :urlImg="url2" />
-    <Imagen class="imagen" :texto="texto3" :urlImg="url3" />
-
-    <button v-on:click="jugar">Jugar</button>
-  </div>
-
-  <div class="perdedor" v-if="mostrarPerdedor">
-    <h1>Haz utilizado tus 5 intentos</h1>
-    <h1>El juego ha terminado, intentalo nuevamente</h1>
-    <button @click="reiniciar">Reiniciar</button>
-  </div>
-  <div class="ganador" v-if="mostrarGanador">
-    <h1>Puntaje: {{ puntaje }}</h1>
-    <h1>Felicitaciones has ganado un premio de $10,000,00</h1>
-    <button @click="reiniciar">Reiniciar</button>
-  </div>
+ <PokemonPage/>
 </template>
 
 <script>
-//import PokemonPage from './pages/PokemonPage.vue'
-import Imagen from "./components/Imagen.vue";
+import PokemonPage from './pages/PokemonPage.vue'
+//import Imagen from "./components/Imagen.vue";
 
 export default {
   name: "App",
   components: {
-    // PokemonPage
-    Imagen,
+    PokemonPage
+  //  Imagen,
   },
   data() {
     return {
@@ -123,71 +101,13 @@ export default {
 </script>
 
 <style >
-.container {
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  grid-template-columns: repeat(4, 250px);
-  
-}
-
-h1 {
-  display: flex;
-  grid-column: span 4;
-  justify-content: center;
-  align-content: center;
-}
-h2 {
-  display: flex;
-  grid-column: span 2;
-  justify-content: center;
-  align-content: center;
-}
-.imagen {
-  display: block;
-  grid-column: span 1;
-
-  text-align: right;
-  margin-left: 180px;
-}
-
-.container p{
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
 }
-button {
-  grid-column: span 4; /* Ocupa 2 columnas */
-  width: 80px;
-  text-align: center;
-  margin-left: 450px;
-  background: white;
-  border: 5px solid;
-  padding: 5px 10px;
- cursor: pointer;
-}
-button:hover{
-  background: rgb(167, 192, 167);
-}
-button:active {
-  background-color: #aabbcc; 
-}
-.perdedor {
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  grid-template-columns: repeat(4, 250px);
-  color: red;
-  margin: 50px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-}
-.ganador {
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  grid-template-columns: repeat(4, 250px);
-  color: blue;
-  margin: 50px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-}
+
 </style>
